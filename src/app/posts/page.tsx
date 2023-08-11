@@ -1,13 +1,16 @@
 import Link from "next/link";
-import Head from "next/head";
-import Image from "next/image";
-import PostLayout from "./layout";
 
 // function declarations don't need closing colons
 export default function FirstPost() {
   return (
-    <main>
-      <h1>First Post</h1>
-    </main>
+    <div className="m-3rem">
+      <h1 className="text-center">First Post</h1>
+      <Link
+        className="text-center text-sky-400 hover:underline font-bold"
+        href="/"
+      >
+        Back to Home
+      </Link>
+    </div>
   );
 }
