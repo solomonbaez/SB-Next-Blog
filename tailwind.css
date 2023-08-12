@@ -542,10 +542,6 @@ video {
   height: 100vh;
 }
 
-.snap-center {
-  scroll-snap-align: center;
-}
-
 .flex-col {
   flex-direction: column;
 }

@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <h1 className="text-center">HI!</h1>
       <section>
-        <h2>Blog</h2>
+        <h1>Blog</h1>
         <ul>
           {posts.map(({ id, date, title }) => (
             <li key={id}>
