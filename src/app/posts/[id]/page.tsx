@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { getPost } from "../../../lib/posts";
 import { getDate } from "../../../lib/date";
 
@@ -7,11 +8,21 @@ export default async function Post({ params }: { params: { id: string } }) {
   let date = getDate(post.date);
 
   return (
-    <div className="mx-10 md-6">
-      <h1>{post.title}</h1>
-      <h2>{date}</h2>
-      <br />
-      <div dangerouslySetInnerHTML={{ __html: post.htmlContent }} />
-    </div>
+    <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      <div className="mx-10 md-4">
+        <h1 className="my-4 text-center text-2xl text-w leading-4 tracking-tighter m-1rem-0">
+          {post.title}
+        </h1>
+        <h2 className="my-4 text-left text-1xl text-gray-500">{date}</h2>
+        <hr className="h-px my-4 bg-red-800 border-0" />
+        <div
+          className="text-left"
+          dangerouslySetInnerHTML={{ __html: post.htmlContent }}
+        />
+      </div>
+    </>
   );
 }

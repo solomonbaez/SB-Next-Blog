@@ -8,7 +8,10 @@ export default function PostLayout({
   return (
     <div className="mb-6 text-center">
       <div className="mb-6">{children}</div>
-      <Link className="mx-auto text-sky-400 hover:underline font-bold" href="/">
+      <Link
+        className="mx-auto hover:underline hover:text-blue-400 font-bold"
+        href="/"
+      >
         Back to Home
       </Link>
     </div>
