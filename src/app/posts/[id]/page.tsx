@@ -16,7 +16,9 @@ export default async function Post({ params }: { params: { id: string } }) {
         <h1 className="my-4 text-center text-2xl text-w leading-4 tracking-tighter m-1rem-0">
           {post.title}
         </h1>
-        <h2 className="my-4 text-left text-1xl text-gray-500">{date}</h2>
+        <small>
+          <p className="my-4 text-left text-gray-500">{date}</p>
+        </small>
         <hr className="h-px my-4 bg-red-800 border-0" />
         <div
           className="text-left"

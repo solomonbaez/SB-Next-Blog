@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getPosts } from "../lib/posts";
+import { getDate } from "../lib/date";
 
 export default function Home() {
   const posts: any = getPosts();
@@ -10,7 +11,7 @@ export default function Home() {
       <section>
         <h1 className="text-red-600 text-center">BLOG</h1>
         <hr className="h-px my-4 bg-red-800 border-0" />
-        <ul>
+        <ul className="space-y-4">
           {posts.map(({ id, date, title }) => (
             <li key={id}>
               <Link
@@ -20,7 +21,7 @@ export default function Home() {
                 {title}
               </Link>
               <br />
-              {date}
+              <small className="text-gray-500">{getDate(date)}</small>
             </li>
           ))}
         </ul>
