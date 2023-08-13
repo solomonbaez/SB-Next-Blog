@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-import RootLayout from "./layout";
 import { getPosts } from "../lib/posts";
 
 export default function Home() {
@@ -17,7 +15,7 @@ export default function Home() {
             <li key={id}>
               <Link
                 className="hover:underline hover:text-blue-400"
-                href={`/posts/${title}`}
+                href={`/posts/${id}`}
               >
                 {title}
               </Link>

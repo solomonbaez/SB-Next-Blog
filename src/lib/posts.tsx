@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "src/app/posts/markup");
 
@@ -26,4 +28,23 @@ export function getPosts() {
       return -1;
     }
   });
+}
+
+export async function getPost(id: string) {
+  const fullPath = path.join(postsDirectory, `${id}.md`);
+  const post = fs.readFileSync(fullPath, "utf8");
+
+  const matterResult = matter(post);
+
+  const htmlResult: any = await remark()
+    .use(html)
+    .process(matterResult.content);
+
+  let htmlContent = htmlResult.toString();
+
+  return {
+    id,
+    htmlContent,
+    ...matterResult.data,
+  };
 }
