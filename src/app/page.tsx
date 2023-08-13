@@ -2,8 +2,14 @@ import Link from "next/link";
 import { getPosts } from "../lib/posts";
 import { getDate } from "../lib/date";
 
-export default function Home() {
-  const posts: any = getPosts();
+interface Post {
+  id: string;
+  date: string;
+  title: string;
+}
+
+const Home = () => {
+  const posts: Post[] = getPosts();
   return (
     <div>
       <h1>Hi! Welcome to my next blog 💀</h1>
@@ -28,4 +34,6 @@ export default function Home() {
       </section>
     </div>
   );
-}
+};
+
+export default Home;

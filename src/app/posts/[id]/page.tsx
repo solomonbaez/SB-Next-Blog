@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { getPost } from "../../../lib/posts";
+import { getPost, PostData } from "../../../lib/posts";
 import { getDate } from "../../../lib/date";
 
 // function declarations don't need closing colons
 export default async function Post({ params }: { params: { id: string } }) {
-  let post = await getPost(params.id);
-  let date = getDate(post.date);
+  let post: PostData & { htmlContent: string } = await getPost(params.id);
+  let date: string = getDate(post.date);
 
   return (
     <>
