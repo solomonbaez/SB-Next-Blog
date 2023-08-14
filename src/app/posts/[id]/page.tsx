@@ -13,7 +13,7 @@ export default async function Post({ params }: { params: { id: string } }) {
         <title>{post.title}</title>
       </Head>
       <div className="mx-10 md-4">
-        <h1 className="my-4 text-center text-2xl text-w leading-4 tracking-tighter m-1rem-0">
+        <h1 className="my-4 text-gray-200 text-center text-2xl text-w leading-4 tracking-tighter m-1rem-0">
           {post.title}
         </h1>
         <small>
@@ -21,7 +21,7 @@ export default async function Post({ params }: { params: { id: string } }) {
         </small>
         <hr className="h-px my-4 bg-red-800 border-0" />
         <div
-          className="text-left"
+          className="text-left text-gray-200"
           dangerouslySetInnerHTML={{ __html: post.htmlContent }}
         />
       </div>

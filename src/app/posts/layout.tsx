@@ -9,7 +9,7 @@ export default function PostLayout({
     <div className="mb-6 text-center">
       <div className="mb-6">{children}</div>
       <Link
-        className="mx-auto hover:underline hover:text-blue-400 font-bold"
+        className="text-gray-200 mx-auto hover:underline hover:text-blue-400 font-bold"
         href="/"
       >
         Back to Home

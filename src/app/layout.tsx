@@ -18,7 +18,7 @@ export default function RootLayout({
       </Head>
       <div className="flex items-center justify-center min-h-screen">
         <div>
-          <header className=" text-center mb-6">
+          <header className="text-gray-200 text-center mb-6">
             <Image
               priority
               src="/images/Aelionore.jpg"
@@ -27,7 +27,7 @@ export default function RootLayout({
               width={144}
               alt=""
             />
-            <h1 className="text-center text-2xl text-w leading-4 tracking-tighter m-1rem-0">
+            <h1 className="text-gray-200 text-center text-2xl text-w leading-4 tracking-tighter m-1rem-0">
               {name}
             </h1>
           </header>

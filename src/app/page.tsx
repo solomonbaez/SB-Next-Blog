@@ -12,7 +12,7 @@ const Home = () => {
   const posts: Post[] = getPosts();
   return (
     <div>
-      <h1>Hi! Welcome to my next blog 💀</h1>
+      <h1 className="text-gray-200">Hi! Welcome to my next blog 💀</h1>
       <br />
       <section>
         <h1 className="text-red-600 text-center">BLOG</h1>
@@ -21,7 +21,7 @@ const Home = () => {
           {posts.map(({ id, date, title }) => (
             <li key={id}>
               <Link
-                className="hover:underline hover:text-blue-400"
+                className="text-gray-200 hover:underline hover:text-blue-400"
                 href={`/posts/${id}`}
               >
                 {title}
